@@ -1,0 +1,1 @@
+python3 ./train.py --batch_size 16 --n_epochs 1000 --patience 1000 --concat_n 20
