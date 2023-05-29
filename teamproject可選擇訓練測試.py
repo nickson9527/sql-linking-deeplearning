@@ -136,7 +136,25 @@ selected_columns = ['Shihimen', 'Feitsui', 'TPB', 'inflow', 'outflow', 'Feitsui_
 train_data = train_test_data (train_typhoon_ids) 
 test_data = train_test_data (test_typhoon_ids) 
 
-
+#調整輸入因子時間步長
+TimeList = [3,3,3,6,10]    
+EndTimeList = [0,0,0,0,0]
+def SplitMuti(data, timeList, endTimeList, TPlus):
+    """切分多個不同時間步長資料"""
+    import numpy as np
+    usedata = data[0]
+    maxtime = max(timeList) #最大步長時間
+    x = []   #預測點的前 N 天的資料
+    y = []   #預測點
+    for t in range(maxtime, len(usedata[0])-TPlus-max(endTimeList)):  
+        arg_tuple = ()
+        for i in range(len(timeList)):
+            arg_tuple += tuple(usedata[i][t-timeList[i]:t+1+endTimeList[i]]) #取到 t+N
+        temp = np.hstack(arg_tuple) # T-Tstep ~ T....
+        x.append(temp)
+        y.append(usedata[-1][t+TPlus]) # T+N
+    return x, y 
+SplitMuti(test_data, TimeList, EndTimeList, 1)
 
 
 
