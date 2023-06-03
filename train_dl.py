@@ -39,9 +39,10 @@ set_random_seed(args.seed)
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 print(torch.cuda.get_device_name(device))
 # Initialize a model, and put it on the device specified.
-model = Classifier(input_dim=11, output_dim=1, hidden_layers=8, hidden_dim=256, dropout=0.1, m_type = 'lstm').to(device)
+model = Classifier(input_dim=11, output_dim=1, hidden_layers=8, hidden_dim=512, dropout=0.5, m_type = 'lstm').to(device)
 # model = torchvision.models.resnet152(pretrained=False).to(device)
-
+# print(model)
+# exit()
 # For the classification task, we use cross-entropy as the measurement of performance.
 # criterion = nn.CrossEntropyLoss()
 criterion = nn.MSELoss()
@@ -54,14 +55,19 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.0003)
 
 # Construct train and valid datasets.
 # The argument "loader" tells how torchvision reads the data.
-train_set = TyphoonDataset(data_path = './完整數據集.csv',typhoon_ids=[1,4,7,10,13,14,16,18,23,37],concat_n=args.concat_n,split='train')
-train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True, num_workers=4, pin_memory=True)
+label = 36
+train_list = np.random.choice(list(set(np.arange(38))-set([label])), size=int(38*0.8),replace=False)
+eval_list = np.array(list(set(np.arange(38)) - set([label]) - set(train_list)))
+print(train_list,eval_list)
+
+train_set = TyphoonDataset(data_path = './完整數據集.csv',typhoon_ids=train_list.tolist(),concat_n=args.concat_n,split='train')
+train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True, pin_memory=True)
 print('train_loader',len(train_loader))
-valid_set = TyphoonDataset(data_path = './完整數據集.csv',typhoon_ids=[2,5,8,28,31,34],concat_n=args.concat_n,split='valid')
-valid_loader = DataLoader(valid_set, batch_size=args.batch_size, shuffle=True, num_workers=4, pin_memory=True)
+valid_set = TyphoonDataset(data_path = './完整數據集.csv',typhoon_ids=eval_list.tolist(),concat_n=args.concat_n,split='valid')
+valid_loader = DataLoader(valid_set, batch_size=args.batch_size, shuffle=True, pin_memory=True)
 print('valid_loader',len(valid_loader))
 test_set = TyphoonDataset(data_path = './完整數據集.csv',typhoon_ids=[36],concat_n=args.concat_n,split='test')
-test_loader = DataLoader(test_set, batch_size=1, shuffle=False, num_workers=4, pin_memory=True)
+test_loader = DataLoader(test_set, batch_size=1, shuffle=False, pin_memory=True)
 print('test_loader',len(test_loader))
 scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, len(train_loader), T_mult=2, eta_min=0, last_epoch=- 1, verbose=False)
 
@@ -79,7 +85,7 @@ for epoch in range(args.n_epochs):
 
     # These are used to record information in training.
     train_loss = []
-    train_accs = []
+    # train_accs = []
 
     for batch in tqdm(train_loader, desc="Train"):
         
@@ -105,23 +111,15 @@ for epoch in range(args.n_epochs):
         loss.backward()
 
         # Clip the gradient norms for stable training.
-        # grad_norm = nn.utils.clip_grad_norm_(model.parameters(), max_norm=10)
+        grad_norm = nn.utils.clip_grad_norm_(model.parameters(), max_norm=10)
 
         # Update the parameters with computed gradients.
         optimizer.step()
         scheduler.step()
-        # Compute the accuracy for current batch.
-        # acc = (logits.argmax(dim=-1) == labels.to(device)).float().mean()
 
         # Record the loss and accuracy.
         train_loss.append(loss.item())
-        # train_accs.append(acc)
-    # exit()
     train_loss = sum(train_loss) / len(train_loss)
-    # train_acc = sum(train_accs) / len(train_accs)
-
-    # Print the information.
-    # print(f"[ Train | {epoch + 1:03d}/{n_epochs:03d} ] loss = {train_loss:.5f}, acc = {train_acc:.5f}")
 
     # ---------- Validation ----------
     # Make sure the model is in eval mode so that some modules like dropout are disabled and work normally.
@@ -185,7 +183,7 @@ for epoch in range(args.n_epochs):
             break
 
 # model = Classifier(input_dim=input_dim, hidden_layers=hidden_layers, hidden_dim=hidden_dim).to(device)
-model = Classifier(input_dim=11, output_dim=1, hidden_layers=8, hidden_dim=256, dropout=0.1, m_type = 'lstm').to(device)
+# model = Classifier(input_dim=11, output_dim=1, hidden_layers=8, hidden_dim=256, dropout=0.1, m_type = 'lstm').to(device)
 model.load_state_dict(torch.load(f"{args.exp_name}_best.ckpt"))
 
 """Make prediction."""
@@ -193,17 +191,23 @@ model.load_state_dict(torch.load(f"{args.exp_name}_best.ckpt"))
 pred = np.array([], dtype=np.int32)
 target = np.array([], dtype=np.int32)
 model.eval()
+test_loss = []
 with torch.no_grad():
     for i, (imgs, labels) in enumerate(tqdm(test_loader)):
         # features = batch
         features = imgs.to(device)
 
         outputs = model(features)
+        
         # print(outputs)
 
         # _, test_pred = torch.max(outputs, 1) # get the index of the class with the highest probability
         pred = np.concatenate((pred, outputs.cpu().numpy()), axis=0)
         target = np.concatenate((target, labels.numpy()), axis=0)
+
+        loss = criterion(outputs, labels.to(device))
+        test_loss.append(loss.item())
+    test_loss = sum(test_loss) / len(test_loss)
         
 
 # plt.clf()
@@ -212,5 +216,6 @@ print(pred.shape,target.shape)
 fig, ax = plt.subplots(1,figsize=(32,12))
 ax.plot(np.arange(pred.shape[0]),pred,color='r',label='pred')
 ax.plot(np.arange(target.shape[0]),target,color='b',label='true')
+ax.set_title(f"loss: {test_loss}")
 ax.legend()
-plt.savefig('./pred.png')
+plt.savefig('./pred_dl.png')

@@ -18,7 +18,11 @@ class BasicBlock(nn.Module):
             self.block = nn.RNN(input_dim, output_dim, self.num_layers,dropout = self.dropout, bidirectional = self.bidirectional, batch_first=True)
         elif self.m_type == 'gru': 
             self.block = nn.GRU(input_dim, output_dim, self.num_layers,dropout = self.dropout, bidirectional = self.bidirectional, batch_first=True)
-
+        elif self.m_type == 'transformer':
+            self.block = nn.Sequential(
+                nn.Linear(input_dim, output_dim),
+                *[nn.TransformerEncoderLayer(d_model=output_dim, dim_feedforward=2048, nhead=hidden_layers, dropout = self.dropout, batch_first=True) for i in range(1)]
+            )
     def forward(self, x):
         if self.m_type == 'lstm':
             out, (hidden_state,_) = self.block(x)
@@ -26,13 +30,17 @@ class BasicBlock(nn.Module):
             out, hidden_state = self.block(x)
         elif self.m_type == 'gru':
             out, hidden_state = self.block(x)
+        elif self.m_type == 'transformer':
+            out = self.block(x)
+        else:
+             raise ValueError(f"Unknown model: {self.m_type}")
         return out
     
 class Classifier(nn.Module):
     def __init__(self, input_dim, output_dim=41, hidden_layers=1, hidden_dim=256, dropout=0.5, m_type = 'lstm'):
         super(Classifier, self).__init__()
         self.fc = nn.Sequential(
-            BasicBlock(input_dim, hidden_dim,hidden_layers, dropout=0.5, m_type = 'lstm'),
+            BasicBlock(input_dim, hidden_dim, hidden_layers, dropout=dropout, m_type = m_type),
             # nn.Linear(hidden_dim, output_dim)
         )
         self.linear = nn.Sequential(
@@ -43,7 +51,7 @@ class Classifier(nn.Module):
         )
     def forward(self, x):
         x = self.fc(x)
-        # print(x)
+        # print(x.shape)
         x = self.linear(x[:,-1])
         x = torch.reshape(x,(-1,))
         return x

@@ -3,6 +3,7 @@ import csv
 import json
 import mysql.connector
 import torch
+# from ga import GA
 class TyphoonDataset(Dataset):
     def __init__(self,
                  config_path = '../hw4/hw4_config.json',
@@ -119,7 +120,8 @@ class TyphoonDataset(Dataset):
                 end_time = result[1]
         
             columns = ', '.join([
-                f"({col} - minmax.min_{col}) / (minmax.max_{col} - minmax.min_{col}) AS {f'normalized_{col}'}"
+                # f"({col} - minmax.min_{col}) / (minmax.max_{col} - minmax.min_{col}) AS {f'normalized_{col}'}"
+                f"{col}"
                 for col in selected_columns
             ])
     
@@ -189,6 +191,37 @@ class TyphoonDataset(Dataset):
         # self.y = torch.cat(combined_label)
         self.y = torch.stack(combined_label)
         # return self.x, self.y
+    def get_all_data(self,):
+        return self.x,self.y
+    
+    # def correlation_coefficient(self,typhoon_ids,selected_columns = ['Shihimen', 'Feitsui', 'TPB', 'inflow', 'outflow', 'Feitsui_outflow', 'Tide'],label='TPB_level'):
+    #     columns = ', '.join([
+    #         f"({col} - minmax.min_{col}) / (minmax.max_{col} - minmax.min_{col}) AS {column_mapping[col]}"
+    #         for col in selected_columns
+    #     ])
+
+    #     # 建立 SQL 查詢語句，從 training_data 資料表中選擇指定時間範圍內的資料並進行規範化
+    #     query = f"""
+    #         SELECT time, {columns}
+    #         FROM training_data AS t
+    #         CROSS JOIN (
+    #             SELECT
+    #                 {', '.join([f"MIN({col}) AS min_{col}, MAX({col}) AS max_{col}" for col in selected_columns])}
+    #             FROM training_data
+    #         ) AS minmax
+    #         WHERE time >= %s AND time <= %s
+    #     """
+
+    #     params = (start_time, end_time)
+    #     mycursor.execute(query, params)
+    #     result = mycursor.fetchall()
+
+
+    #     for row in result:
+    #         time = row[0]
+    #         normalized_row = [time] + [float(val) if val is not None else None for val in row[1:]]
+    #         print([f"{val:.4f}" if isinstance(val, float) else val for val in normalized_row])
+
 
 if __name__ == '__main__':
     data = TyphoonDataset()
