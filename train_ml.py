@@ -27,6 +27,7 @@ parser.add_argument("--do_test",action="store_true")
 parser.add_argument("--ga",action="store_true")
 parser.add_argument("--label", type=int, default=36, help="Which typhoon is used as test data")
 parser.add_argument('--code', type=int, nargs='+')
+parser.add_argument("--minmax",action="store_true")
 ## training
 # parser.add_argument("--batch_size", type=int, default=128, help="The number of batch size")
 parser.add_argument("--concat_n", type=int, default=1, help="The number of concat (>1)")
@@ -83,20 +84,32 @@ def decode(code,train_list,eval_list,label,args=None):
     all_typhoon = train_list.tolist()+eval_list.tolist()+[label]
     train_set = TyphoonDataset(data_path = './完整數據集.csv',typhoon_ids=train_list.tolist(),concat_n=args.concat_n,split='train')
     # train_set.min_max_data(all_typhoon,selected_columns = select_columns,label='TPB_level',split = train_set.split)
-    train_set.fetch_data(train_set.typhoon_ids,selected_columns = select_columns,label='TPB_level',table='normalized_specified_typhoon_train')
+    if args.minmax:
+        train_set.fetch_data(train_set.typhoon_ids,selected_columns = select_columns,label='TPB_level',table='normalized_specified_typhoon_train')
+    else:
+        train_set.fetch_data(train_set.typhoon_ids,selected_columns = select_columns,label='TPB_level')
+    
     # train_set.fetch_data(train_set.typhoon_ids,selected_columns = select_columns,label='TPB_level')
     # train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True, pin_memory=True)
     # exit()
     # print('train_loader',len(train_loader))
     valid_set = TyphoonDataset(data_path = './完整數據集.csv',typhoon_ids=eval_list.tolist(),concat_n=args.concat_n,split='valid')
     # valid_set.min_max_data(all_typhoon,selected_columns = select_columns,label='TPB_level',split = valid_set.split)
-    valid_set.fetch_data(valid_set.typhoon_ids,selected_columns = select_columns,label='TPB_level',table='normalized_specified_typhoon_valid')
+    if args.minmax:
+        valid_set.fetch_data(valid_set.typhoon_ids,selected_columns = select_columns,label='TPB_level',table='normalized_specified_typhoon_valid')
+    else:
+        valid_set.fetch_data(valid_set.typhoon_ids,selected_columns = select_columns,label='TPB_level')
+    
     # valid_set.fetch_data(valid_set.typhoon_ids,selected_columns = select_columns,label='TPB_level')
     # valid_loader = DataLoader(valid_set, batch_size=args.batch_size, shuffle=True, pin_memory=True)
     # print('valid_loader',len(valid_loader))
     test_set = TyphoonDataset(data_path = './完整數據集.csv',typhoon_ids=[label],concat_n=args.concat_n,split='test')
     # test_set.min_max_data(all_typhoon,selected_columns = select_columns,label='TPB_level',split = test_set.split)
-    test_set.fetch_data(test_set.typhoon_ids,selected_columns = select_columns,label='TPB_level',table='normalized_specified_typhoon_test')
+    if args.minmax:
+        test_set.fetch_data(test_set.typhoon_ids,selected_columns = select_columns,label='TPB_level',table='normalized_specified_typhoon_test')
+    else:
+        test_set.fetch_data(test_set.typhoon_ids,selected_columns = select_columns,label='TPB_level')
+    
     # test_set.fetch_data(test_set.typhoon_ids,selected_columns = select_columns,label='TPB_level')
     # test_loader = DataLoader(test_set, batch_size=1, shuffle=False, pin_memory=True)
 
@@ -172,12 +185,15 @@ if __name__ == '__main__':
     columns = ['Shihimen', 'Feitsui', 'TPB', 'inflow', 'outflow', 'Feitsui_outflow', 'Tide']
     train_set = TyphoonDataset(data_path = './完整數據集.csv',typhoon_ids=train_list.tolist(),concat_n=args.concat_n,split='train')
     train_set.load_db(train_set.data_path)
-    train_set.min_max_data(all_typhoon,selected_columns = columns,label='TPB_level',split = train_set.split)
+    
     valid_set = TyphoonDataset(data_path = './完整數據集.csv',typhoon_ids=eval_list.tolist(),concat_n=args.concat_n,split='valid')
-    valid_set.min_max_data(all_typhoon,selected_columns = columns,label='TPB_level',split = valid_set.split)
+    
     test_set = TyphoonDataset(data_path = './完整數據集.csv',typhoon_ids=[args.label],concat_n=args.concat_n,split='test')
-    test_set.min_max_data(all_typhoon,selected_columns = columns,label='TPB_level',split = test_set.split)
-
+    
+    if args.minmax:
+        train_set.min_max_data(all_typhoon,selected_columns = columns,label='TPB_level',split = train_set.split)
+        valid_set.min_max_data(all_typhoon,selected_columns = columns,label='TPB_level',split = valid_set.split)
+        test_set.min_max_data(all_typhoon,selected_columns = columns,label='TPB_level',split = test_set.split)
     print('Train typhoon:',sorted(train_list))
     print('Valid typhoon:',sorted(eval_list))
     print('Test typhoon:', args.label)
