@@ -1,0 +1,1334 @@
+Namespace(bit_range=2, code=[0, 1, 0, 0, 0, 0, 1], concat_n=5, do_test=True, do_train=True, exp_name=PosixPath('linear_minmax_concat_5'), ga=True, label=36, max_node=7, num_chrom=20, num_iter=50, rate_cross=0.8, rate_mutate=0.3, seed=6666)
+[ 01/20 ] <[1 1 1 1 1 0 1]> <[1 1 1 1 1 0 1]> Train loss = -2.86475| Valid loss = -300.99046-> best
+[ 02/20 ] <[1 1 1 1 1 1 0]> <[1 1 1 1 1 1 0]> Train loss = -0.84621| Valid loss = -256.24924-> best
+[ 03/20 ] <[0 1 0 1 0 1 1]> Train loss = 0.41801| Valid loss = -379.04633
+[ 04/20 ] <[0 0 0 1 0 1 0]> <[0 0 0 1 0 1 0]> Train loss = 0.13672| Valid loss = -256.00430-> best
+[ 05/20 ] <[0 0 1 1 1 0 1]> Train loss = 0.40262| Valid loss = -314.72242
+[ 06/20 ] <[1 0 1 0 1 0 1]> Train loss = 0.39185| Valid loss = -326.28913
+[ 07/20 ] <[1 0 1 0 1 0 1]> Train loss = 0.39185| Valid loss = -326.28913
+[ 08/20 ] <[0 0 0 0 0 1 0]> <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -116.27852-> best
+[ 09/20 ] <[0 0 1 1 0 1 0]> Train loss = 0.11424| Valid loss = -189.92624
+[ 10/20 ] <[1 0 0 1 1 0 1]> Train loss = 0.36765| Valid loss = -311.05126
+[ 11/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -597.16777
+[ 12/20 ] <[0 0 0 1 0 1 1]> Train loss = -0.37083| Valid loss = -487.65645
+[ 13/20 ] <[0 1 1 0 1 0 1]> Train loss = 0.35442| Valid loss = -350.85496
+[ 14/20 ] <[1 0 1 0 0 1 0]> <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849-> best
+[ 15/20 ] <[1 0 0 0 0 0 0]> Train loss = -25.47096| Valid loss = -8633.66156
+[ 16/20 ] <[0 1 0 0 1 0 0]> Train loss = -3.48472| Valid loss = -8828.77687
+[ 17/20 ] <[0 1 1 1 1 0 1]> Train loss = 0.32528| Valid loss = -400.65598
+[ 18/20 ] <[0 1 0 1 0 0 1]> Train loss = 0.40750| Valid loss = -278.66492
+[ 19/20 ] <[1 0 1 0 0 0 0]> Train loss = -2.12764| Valid loss = -6714.43315
+[ 20/20 ] <[0 1 0 1 1 1 1]> Train loss = 0.39612| Valid loss = -334.61850
+
+====[ GA iter 01/50 ]====
+[ 01/20 ] <[0 0 0 1 1 1 1]> Train loss = 0.30272| Valid loss = -326.53808
+[ 02/20 ] <[0 1 0 1 0 0 1]> Train loss = 0.40750| Valid loss = -278.66492
+[ 03/20 ] <[1 0 1 0 1 0 1]> Train loss = 0.39185| Valid loss = -326.28913
+[ 04/20 ] <[1 1 1 1 0 0 1]> Train loss = -1.62701| Valid loss = -686.38884
+[ 05/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -189.29702
+[ 06/20 ] <[0 0 0 0 0 0 1]> Train loss = 0.31843| Valid loss = -320.77249
+[ 07/20 ] <[1 1 0 1 1 0 1]> Train loss = 0.26274| Valid loss = -385.77309
+[ 08/20 ] <[0 1 1 0 1 1 0]> Train loss = 0.12804| Valid loss = -155.41269
+[ 09/20 ] <[1 1 1 1 1 0 1]> Train loss = -2.86475| Valid loss = -300.99046
+[ 10/20 ] <[1 0 0 1 1 1 0]> Train loss = 0.07888| Valid loss = -264.25835
+[ 11/20 ] <[0 1 0 1 1 0 1]> Train loss = 0.36633| Valid loss = -304.64526
+[ 12/20 ] <[1 1 1 1 1 1 1]> Train loss = -1.98787| Valid loss = -290.95243
+[ 13/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -536.64171
+[ 14/20 ] <[0 1 0 1 0 0 1]> Train loss = 0.40750| Valid loss = -278.66492
+[ 15/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -189.29702
+[ 16/20 ] <[0 0 0 1 0 0 1]> Train loss = 0.35841| Valid loss = -296.87873
+[ 17/20 ] <[0 1 0 0 1 0 1]> Train loss = 0.37459| Valid loss = -277.76812
+[ 18/20 ] <[1 0 1 0 0 0 1]> Train loss = 0.26540| Valid loss = -402.57937
+[ 19/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 20/20 ] <[1 1 1 1 0 0 1]> Train loss = -1.62701| Valid loss = -686.38884
+
+====[ GA iter 02/50 ]====
+[ 01/20 ] <[1 1 1 0 1 1 0]> Train loss = -0.00286| Valid loss = -183.55842
+[ 02/20 ] <[0 0 1 0 0 1 0]> Train loss = -4.51998| Valid loss = -5924.68604
+[ 03/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 04/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -450.99283
+[ 05/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -189.29702
+[ 06/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -113.11138
+[ 07/20 ] <[1 0 1 1 0 1 1]> Train loss = 0.24588| Valid loss = -453.54153
+[ 08/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -113.11138
+[ 09/20 ] <[1 1 1 0 1 1 0]> Train loss = -0.00286| Valid loss = -183.55842
+[ 10/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -597.16777
+[ 11/20 ] <[1 1 1 0 1 1 1]> Train loss = -4.40549| Valid loss = -290.18926
+[ 12/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -597.16777
+[ 13/20 ] <[1 0 1 1 0 1 1]> Train loss = 0.24588| Valid loss = -453.54153
+[ 14/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -113.11138
+[ 15/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 16/20 ] <[0 1 1 1 0 1 1]> Train loss = -0.16327| Valid loss = -366.07417
+[ 17/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 18/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -597.16777
+[ 19/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 20/20 ] <[0 0 1 1 0 1 1]> Train loss = 0.41920| Valid loss = -315.92789
+
+====[ GA iter 03/50 ]====
+[ 01/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -450.99283
+[ 02/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -113.11138
+[ 03/20 ] <[0 0 1 0 0 1 0]> Train loss = -4.51998| Valid loss = -5924.68604
+[ 04/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -424.42349
+[ 05/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 06/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 07/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -113.11138
+[ 08/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 09/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -450.99283
+[ 10/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -597.16777
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 12/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -113.11138
+[ 13/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -113.11138
+[ 14/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 15/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -483.61065
+[ 16/20 ] <[0 0 1 0 0 1 0]> Train loss = -4.51998| Valid loss = -5924.68604
+[ 17/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 18/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -450.99283
+[ 19/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -189.29702
+[ 20/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -189.29702
+
+====[ GA iter 04/50 ]====
+[ 01/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.30719
+[ 02/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 03/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 04/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -483.61065
+[ 05/20 ] <[1 1 0 0 0 1 0]> <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128-> best
+[ 06/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.30719
+[ 07/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -450.99283
+[ 08/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -597.16777
+[ 09/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -483.61065
+[ 10/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -113.11138
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 12/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -450.99283
+[ 13/20 ] <[0 1 1 0 1 1 0]> Train loss = 0.12804| Valid loss = -155.41269
+[ 14/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -483.61065
+[ 15/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 16/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 17/20 ] <[0 1 1 0 1 1 0]> Train loss = 0.12804| Valid loss = -155.41269
+[ 18/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 19/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -483.61065
+[ 20/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -424.42349
+
+====[ GA iter 05/50 ]====
+[ 01/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+[ 02/20 ] <[1 0 1 0 0 0 0]> Train loss = -2.12764| Valid loss = -6714.43315
+[ 03/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.89155
+[ 04/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 05/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+[ 06/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 07/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 08/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7216.52353
+[ 09/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -207.03506
+[ 10/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 11/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+[ 12/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -189.29702
+[ 13/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 14/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2980.86651
+[ 15/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7216.52353
+[ 16/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 17/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7216.52353
+[ 18/20 ] <[1 0 1 1 0 1 0]> Train loss = 0.03111| Valid loss = -215.19844
+[ 19/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7216.52353
+[ 20/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+
+====[ GA iter 06/50 ]====
+[ 01/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 02/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -189.29702
+[ 03/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7216.52353
+[ 04/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+[ 05/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 06/20 ] <[1 1 0 0 0 0 1]> Train loss = 0.25751| Valid loss = -321.18529
+[ 07/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7216.52353
+[ 08/20 ] <[1 1 0 0 0 0 1]> Train loss = 0.25751| Valid loss = -321.18529
+[ 09/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 10/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2980.86651
+[ 11/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -189.29702
+[ 12/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -524.52284
+[ 13/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+[ 14/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -189.29702
+[ 15/20 ] <[0 0 1 0 1 1 0]> Train loss = 0.10283| Valid loss = -162.33603
+[ 16/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+[ 17/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 18/20 ] <[1 0 0 0 0 0 1]> Train loss = -6.73508| Valid loss = -1876.07684
+[ 19/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2980.86651
+[ 20/20 ] <[1 0 1 0 0 0 0]> Train loss = -2.12764| Valid loss = -6714.43315
+
+====[ GA iter 07/50 ]====
+[ 01/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2980.86651
+[ 02/20 ] <[0 1 0 0 0 0 1]> Train loss = -1.98539| Valid loss = -1081.26619
+[ 03/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -189.29702
+[ 04/20 ] <[1 1 0 0 1 0 1]> Train loss = 0.36229| Valid loss = -338.05848
+[ 05/20 ] <[1 0 1 0 1 1 1]> Train loss = 0.38693| Valid loss = -353.45311
+[ 06/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 07/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.89155
+[ 08/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 09/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -424.42349
+[ 10/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -524.52284
+[ 11/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 12/20 ] <[1 1 0 0 0 0 1]> Train loss = 0.25751| Valid loss = -321.18529
+[ 13/20 ] <[1 0 0 0 1 0 1]> Train loss = 0.36667| Valid loss = -295.00863
+[ 14/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 15/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+[ 16/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -483.61065
+[ 17/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -116.27852
+[ 18/20 ] <[1 0 1 0 1 0 1]> Train loss = 0.39185| Valid loss = -326.28913
+[ 19/20 ] <[1 1 1 0 1 1 0]> Train loss = -0.00286| Valid loss = -183.55842
+[ 20/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+
+====[ GA iter 08/50 ]====
+[ 01/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -189.29702
+[ 02/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+[ 03/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -524.52284
+[ 04/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 05/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 06/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2980.86651
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+[ 08/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -424.42349
+[ 09/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -116.27852
+[ 10/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2980.86651
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 12/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -524.52284
+[ 13/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.30719
+[ 14/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+[ 15/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.89155
+[ 16/20 ] <[1 0 0 0 0 0 1]> Train loss = -6.73508| Valid loss = -1876.07684
+[ 17/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -86.06849
+[ 18/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 19/20 ] <[0 1 0 0 1 0 1]> Train loss = 0.37459| Valid loss = -277.76812
+[ 20/20 ] <[1 0 0 0 1 0 1]> Train loss = 0.36667| Valid loss = -295.00863
+
+====[ GA iter 09/50 ]====
+[ 01/20 ] <[0 0 0 0 1 0 1]> Train loss = 0.35003| Valid loss = -297.93409
+[ 02/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.89155
+[ 03/20 ] <[0 0 0 0 1 1 1]> Train loss = 0.37770| Valid loss = -296.76300
+[ 04/20 ] <[1 0 0 0 0 0 1]> Train loss = -6.73508| Valid loss = -1876.07684
+[ 05/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 06/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -536.64171
+[ 07/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -116.27852
+[ 08/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+[ 09/20 ] <[0 0 0 1 1 1 0]> Train loss = 0.13453| Valid loss = -303.42212
+[ 10/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.33343
+[ 12/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -65.60128
+Namespace(bit_range=2, code=[0, 1, 0, 0, 0, 0, 1], concat_n=5, do_test=True, do_train=True, exp_name=PosixPath('linear_minmax_concat_5'), ga=True, label=36, max_node=7, num_chrom=20, num_iter=50, rate_cross=0.8, rate_mutate=0.3, seed=6666)
+[ 01/20 ] <[1 1 1 1 1 0 1]> <[1 1 1 1 1 0 1]> Train loss = -2.86475| Valid loss = -300.81146-> best
+[ 02/20 ] <[1 1 1 1 1 1 0]> <[1 1 1 1 1 1 0]> Train loss = -0.84621| Valid loss = -256.52716-> best
+[ 03/20 ] <[0 1 0 1 0 1 1]> Train loss = 0.41801| Valid loss = -380.21848
+[ 04/20 ] <[0 0 0 1 0 1 0]> Train loss = 0.13672| Valid loss = -256.73612
+[ 05/20 ] <[0 0 1 1 1 0 1]> Train loss = 0.40262| Valid loss = -314.16165
+[ 06/20 ] <[1 0 1 0 1 0 1]> Train loss = 0.39185| Valid loss = -325.91572
+[ 07/20 ] <[1 0 1 0 1 0 1]> Train loss = 0.39185| Valid loss = -325.91572
+[ 08/20 ] <[0 0 0 0 0 1 0]> <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522-> best
+[ 09/20 ] <[0 0 1 1 0 1 0]> Train loss = 0.11424| Valid loss = -190.12576
+[ 10/20 ] <[1 0 0 1 1 0 1]> Train loss = 0.36765| Valid loss = -310.36273
+[ 11/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -599.82726
+[ 12/20 ] <[0 0 0 1 0 1 1]> Train loss = -0.37083| Valid loss = -480.50829
+[ 13/20 ] <[0 1 1 0 1 0 1]> Train loss = 0.35442| Valid loss = -350.62437
+[ 14/20 ] <[1 0 1 0 0 1 0]> <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839-> best
+[ 15/20 ] <[1 0 0 0 0 0 0]> Train loss = -25.47096| Valid loss = -8633.60820
+[ 16/20 ] <[0 1 0 0 1 0 0]> Train loss = -3.48472| Valid loss = -8828.43800
+[ 17/20 ] <[0 1 1 1 1 0 1]> Train loss = 0.32528| Valid loss = -399.73176
+[ 18/20 ] <[0 1 0 1 0 0 1]> Train loss = 0.40750| Valid loss = -278.04704
+[ 19/20 ] <[1 0 1 0 0 0 0]> Train loss = -2.12764| Valid loss = -6714.21785
+[ 20/20 ] <[0 1 0 1 1 1 1]> Train loss = 0.39612| Valid loss = -334.97645
+
+====[ GA iter 01/50 ]====
+[ 01/20 ] <[0 0 0 1 1 1 1]> Train loss = 0.30272| Valid loss = -325.07499
+[ 02/20 ] <[0 1 0 1 0 0 1]> Train loss = 0.40750| Valid loss = -278.04704
+[ 03/20 ] <[1 0 1 0 1 0 1]> Train loss = 0.39185| Valid loss = -325.91572
+[ 04/20 ] <[1 1 1 1 0 0 1]> Train loss = -1.62701| Valid loss = -682.33958
+[ 05/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+[ 06/20 ] <[0 0 0 0 0 0 1]> Train loss = 0.31843| Valid loss = -320.29313
+[ 07/20 ] <[1 1 0 1 1 0 1]> Train loss = 0.26274| Valid loss = -385.57982
+[ 08/20 ] <[0 1 1 0 1 1 0]> Train loss = 0.12804| Valid loss = -155.20089
+[ 09/20 ] <[1 1 1 1 1 0 1]> Train loss = -2.86475| Valid loss = -300.81146
+[ 10/20 ] <[1 0 0 1 1 1 0]> Train loss = 0.07888| Valid loss = -264.48663
+[ 11/20 ] <[0 1 0 1 1 0 1]> Train loss = 0.36633| Valid loss = -304.71288
+[ 12/20 ] <[1 1 1 1 1 1 1]> Train loss = -1.98787| Valid loss = -289.38502
+[ 13/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -539.60519
+[ 14/20 ] <[0 1 0 1 0 0 1]> Train loss = 0.40750| Valid loss = -278.04704
+[ 15/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+[ 16/20 ] <[0 0 0 1 0 0 1]> Train loss = 0.35841| Valid loss = -296.39262
+[ 17/20 ] <[0 1 0 0 1 0 1]> Train loss = 0.37459| Valid loss = -277.05981
+[ 18/20 ] <[1 0 1 0 0 0 1]> Train loss = 0.26540| Valid loss = -402.20684
+[ 19/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 20/20 ] <[1 1 1 1 0 0 1]> Train loss = -1.62701| Valid loss = -682.33958
+
+====[ GA iter 02/50 ]====
+[ 01/20 ] <[1 1 1 0 1 1 0]> Train loss = -0.00286| Valid loss = -183.69268
+[ 02/20 ] <[0 0 1 0 0 1 0]> Train loss = -4.51998| Valid loss = -5911.82293
+[ 03/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 04/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -453.21307
+[ 05/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+[ 06/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 07/20 ] <[1 0 1 1 0 1 1]> Train loss = 0.24588| Valid loss = -454.33760
+[ 08/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 09/20 ] <[1 1 1 0 1 1 0]> Train loss = -0.00286| Valid loss = -183.69268
+[ 10/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -599.82726
+[ 11/20 ] <[1 1 1 0 1 1 1]> Train loss = -4.40549| Valid loss = -290.79041
+[ 12/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -599.82726
+[ 13/20 ] <[1 0 1 1 0 1 1]> Train loss = 0.24588| Valid loss = -454.33760
+[ 14/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 15/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 16/20 ] <[0 1 1 1 0 1 1]> Train loss = -0.16327| Valid loss = -369.66695
+[ 17/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 18/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -599.82726
+[ 19/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 20/20 ] <[0 0 1 1 0 1 1]> Train loss = 0.41920| Valid loss = -316.36787
+
+====[ GA iter 03/50 ]====
+[ 01/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -453.21307
+[ 02/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 03/20 ] <[0 0 1 0 0 1 0]> Train loss = -4.51998| Valid loss = -5911.82293
+[ 04/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 05/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 06/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 07/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 08/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 09/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -453.21307
+[ 10/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -599.82726
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 12/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 13/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 14/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 15/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -486.85258
+[ 16/20 ] <[0 0 1 0 0 1 0]> Train loss = -4.51998| Valid loss = -5911.82293
+[ 17/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 18/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -453.21307
+[ 19/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+[ 20/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+
+====[ GA iter 04/50 ]====
+[ 01/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 02/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 03/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 04/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -486.85258
+[ 05/20 ] <[1 1 0 0 0 1 0]> <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636-> best
+[ 06/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 07/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -453.21307
+[ 08/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -599.82726
+[ 09/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -486.85258
+[ 10/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 12/20 ] <[0 1 1 0 1 1 1]> Train loss = 0.38875| Valid loss = -453.21307
+[ 13/20 ] <[0 1 1 0 1 1 0]> Train loss = 0.12804| Valid loss = -155.20089
+[ 14/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -486.85258
+[ 15/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 16/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 17/20 ] <[0 1 1 0 1 1 0]> Train loss = 0.12804| Valid loss = -155.20089
+[ 18/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 19/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -486.85258
+[ 20/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+
+====[ GA iter 05/50 ]====
+[ 01/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 02/20 ] <[1 0 1 0 0 0 0]> Train loss = -2.12764| Valid loss = -6714.21785
+[ 03/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 04/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 05/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 06/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 07/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 08/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 09/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 10/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 11/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 12/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+[ 13/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 14/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 15/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 16/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 17/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 18/20 ] <[1 0 1 1 0 1 0]> Train loss = 0.03111| Valid loss = -215.87060
+[ 19/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 20/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+
+====[ GA iter 06/50 ]====
+[ 01/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 02/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+[ 03/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 04/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 05/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 06/20 ] <[1 1 0 0 0 0 1]> Train loss = 0.25751| Valid loss = -320.56229
+[ 07/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 08/20 ] <[1 1 0 0 0 0 1]> Train loss = 0.25751| Valid loss = -320.56229
+[ 09/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 10/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 11/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+[ 12/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 13/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 14/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+[ 15/20 ] <[0 0 1 0 1 1 0]> Train loss = 0.10283| Valid loss = -162.80230
+[ 16/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 17/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 18/20 ] <[1 0 0 0 0 0 1]> Train loss = -6.73508| Valid loss = -1873.89536
+[ 19/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 20/20 ] <[1 0 1 0 0 0 0]> Train loss = -2.12764| Valid loss = -6714.21785
+
+====[ GA iter 07/50 ]====
+[ 01/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 02/20 ] <[0 1 0 0 0 0 1]> Train loss = -1.98539| Valid loss = -1080.91328
+[ 03/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+[ 04/20 ] <[1 1 0 0 1 0 1]> Train loss = 0.36229| Valid loss = -338.07821
+[ 05/20 ] <[1 0 1 0 1 1 1]> Train loss = 0.38693| Valid loss = -354.30009
+[ 06/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 07/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 08/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 09/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 10/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 11/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 12/20 ] <[1 1 0 0 0 0 1]> Train loss = 0.25751| Valid loss = -320.56229
+[ 13/20 ] <[1 0 0 0 1 0 1]> Train loss = 0.36667| Valid loss = -294.17774
+[ 14/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 15/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 16/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -486.85258
+[ 17/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 18/20 ] <[1 0 1 0 1 0 1]> Train loss = 0.39185| Valid loss = -325.91572
+[ 19/20 ] <[1 1 1 0 1 1 0]> Train loss = -0.00286| Valid loss = -183.69268
+[ 20/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+
+====[ GA iter 08/50 ]====
+[ 01/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+[ 02/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 03/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 04/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 05/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 06/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 09/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 10/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 12/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 13/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 14/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 15/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 16/20 ] <[1 0 0 0 0 0 1]> Train loss = -6.73508| Valid loss = -1873.89536
+[ 17/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 18/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 19/20 ] <[0 1 0 0 1 0 1]> Train loss = 0.37459| Valid loss = -277.05981
+[ 20/20 ] <[1 0 0 0 1 0 1]> Train loss = 0.36667| Valid loss = -294.17774
+
+====[ GA iter 09/50 ]====
+[ 01/20 ] <[0 0 0 0 1 0 1]> Train loss = 0.35003| Valid loss = -297.52483
+[ 02/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 03/20 ] <[0 0 0 0 1 1 1]> Train loss = 0.37770| Valid loss = -296.43267
+[ 04/20 ] <[1 0 0 0 0 0 1]> Train loss = -6.73508| Valid loss = -1873.89536
+[ 05/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 06/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -539.60519
+[ 07/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 08/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 09/20 ] <[0 0 0 1 1 1 0]> Train loss = 0.13453| Valid loss = -304.63753
+[ 10/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 12/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 13/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 14/20 ] <[1 1 1 0 1 0 1]> Train loss = -0.06086| Valid loss = -375.03191
+[ 15/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 16/20 ] <[1 0 0 0 0 1 1]> Train loss = 0.33896| Valid loss = -300.07373
+[ 17/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 18/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 19/20 ] <[1 1 1 0 0 0 1]> Train loss = -3.17465| Valid loss = -330.88166
+[ 20/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+
+====[ GA iter 10/50 ]====
+[ 01/20 ] <[1 1 1 0 1 0 1]> Train loss = -0.06086| Valid loss = -375.03191
+[ 02/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 03/20 ] <[1 0 0 0 0 0 1]> Train loss = -6.73508| Valid loss = -1873.89536
+[ 04/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 05/20 ] <[1 1 1 1 0 0 1]> Train loss = -1.62701| Valid loss = -682.33958
+[ 06/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 07/20 ] <[1 1 1 0 1 0 1]> Train loss = -0.06086| Valid loss = -375.03191
+[ 08/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 09/20 ] <[0 1 0 0 0 0 1]> Train loss = -1.98539| Valid loss = -1080.91328
+[ 10/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 11/20 ] <[0 0 0 0 1 0 1]> Train loss = 0.35003| Valid loss = -297.52483
+[ 12/20 ] <[0 0 0 1 0 1 0]> Train loss = 0.13672| Valid loss = -256.73612
+[ 13/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 14/20 ] <[0 0 0 0 1 0 1]> Train loss = 0.35003| Valid loss = -297.52483
+[ 15/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 16/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 17/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 18/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 19/20 ] <[1 0 0 0 0 1 1]> Train loss = 0.33896| Valid loss = -300.07373
+[ 20/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+
+====[ GA iter 11/50 ]====
+[ 01/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 02/20 ] <[0 0 0 0 1 0 1]> Train loss = 0.35003| Valid loss = -297.52483
+[ 03/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 04/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 05/20 ] <[1 1 0 0 1 0 1]> Train loss = 0.36229| Valid loss = -338.07821
+[ 06/20 ] <[0 0 1 0 1 0 1]> Train loss = 0.38457| Valid loss = -284.57959
+[ 07/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 08/20 ] <[1 1 0 0 1 0 1]> Train loss = 0.36229| Valid loss = -338.07821
+[ 09/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 10/20 ] <[0 0 0 1 0 0 0]> Train loss = 0.10724| Valid loss = -263.88679
+[ 11/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 12/20 ] <[1 1 1 1 0 0 0]> Train loss = 0.00071| Valid loss = -258.22260
+[ 13/20 ] <[1 1 0 0 1 0 1]> Train loss = 0.36229| Valid loss = -338.07821
+[ 14/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 15/20 ] <[1 0 0 0 1 0 1]> Train loss = 0.36667| Valid loss = -294.17774
+[ 16/20 ] <[1 1 1 0 1 1 1]> Train loss = -4.40549| Valid loss = -290.79041
+[ 17/20 ] <[1 1 0 0 0 0 1]> Train loss = 0.25751| Valid loss = -320.56229
+[ 18/20 ] <[1 1 1 1 0 1 1]> Train loss = -1.32114| Valid loss = -285.65031
+[ 19/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 20/20 ] <[1 1 1 0 1 0 1]> Train loss = -0.06086| Valid loss = -375.03191
+
+====[ GA iter 12/50 ]====
+[ 01/20 ] <[1 0 0 0 0 0 0]> Train loss = -25.47096| Valid loss = -8633.60820
+[ 02/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 03/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 04/20 ] <[0 0 0 1 0 1 0]> Train loss = 0.13672| Valid loss = -256.73612
+[ 05/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 06/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 07/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 08/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 11/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 12/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 13/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -539.60519
+[ 14/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 15/20 ] <[0 1 0 0 0 0 0]> Train loss = -46.31675| Valid loss = -11065.75406
+[ 16/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 17/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -539.60519
+[ 18/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 19/20 ] <[0 1 0 0 0 0 0]> Train loss = -46.31675| Valid loss = -11065.75406
+[ 20/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+
+====[ GA iter 13/50 ]====
+[ 01/20 ] <[0 1 0 0 1 1 0]> Train loss = 0.08356| Valid loss = -144.66231
+[ 02/20 ] <[1 0 0 1 1 1 0]> Train loss = 0.07888| Valid loss = -264.48663
+[ 03/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 04/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 05/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 06/20 ] <[0 0 1 0 0 1 0]> Train loss = -4.51998| Valid loss = -5911.82293
+[ 07/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 08/20 ] <[0 0 1 0 0 1 0]> Train loss = -4.51998| Valid loss = -5911.82293
+[ 09/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 10/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 11/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 12/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 13/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 14/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 15/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -539.60519
+[ 16/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -539.60519
+[ 17/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 18/20 ] <[0 0 1 0 0 1 0]> Train loss = -4.51998| Valid loss = -5911.82293
+[ 19/20 ] <[0 0 1 0 0 1 0]> Train loss = -4.51998| Valid loss = -5911.82293
+[ 20/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+
+====[ GA iter 14/50 ]====
+[ 01/20 ] <[1 0 1 1 0 1 0]> Train loss = 0.03111| Valid loss = -215.87060
+[ 02/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 03/20 ] <[1 0 0 1 1 0 0]> Train loss = 0.12892| Valid loss = -262.72437
+[ 04/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 05/20 ] <[0 1 0 0 0 0 1]> Train loss = -1.98539| Valid loss = -1080.91328
+[ 06/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 07/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 08/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 09/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 10/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 11/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 12/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 13/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 14/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 15/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 16/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 17/20 ] <[1 1 0 1 0 1 1]> Train loss = 0.06600| Valid loss = -427.26154
+[ 18/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 19/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 20/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+
+====[ GA iter 15/50 ]====
+[ 01/20 ] <[0 0 0 1 1 0 0]> Train loss = 0.10977| Valid loss = -306.54388
+[ 02/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 03/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 04/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 05/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 06/20 ] <[0 0 1 1 0 1 0]> Train loss = 0.11424| Valid loss = -190.12576
+[ 07/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 08/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 09/20 ] <[1 0 1 1 0 1 1]> Train loss = 0.24588| Valid loss = -454.33760
+[ 10/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 11/20 ] <[1 1 0 1 0 1 1]> Train loss = 0.06600| Valid loss = -427.26154
+[ 12/20 ] <[0 0 0 0 0 0 1]> Train loss = 0.31843| Valid loss = -320.29313
+[ 13/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 14/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 15/20 ] <[0 0 0 0 0 0 1]> Train loss = 0.31843| Valid loss = -320.29313
+[ 16/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 17/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 18/20 ] <[0 0 0 1 0 1 0]> Train loss = 0.13672| Valid loss = -256.73612
+[ 19/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 20/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+
+====[ GA iter 16/50 ]====
+[ 01/20 ] <[0 0 1 0 0 1 1]> Train loss = 0.35313| Valid loss = -599.82726
+[ 02/20 ] <[1 1 0 1 0 1 1]> Train loss = 0.06600| Valid loss = -427.26154
+[ 03/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 04/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 05/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 06/20 ] <[0 0 0 1 0 1 1]> Train loss = -0.37083| Valid loss = -480.50829
+[ 07/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 08/20 ] <[0 0 0 1 0 1 0]> Train loss = 0.13672| Valid loss = -256.73612
+[ 09/20 ] <[0 0 0 1 0 1 0]> Train loss = 0.13672| Valid loss = -256.73612
+[ 10/20 ] <[0 0 0 1 1 0 0]> Train loss = 0.10977| Valid loss = -306.54388
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 12/20 ] <[1 0 0 1 0 1 1]> Train loss = 0.41094| Valid loss = -317.65190
+[ 13/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 14/20 ] <[0 0 0 1 0 1 0]> Train loss = 0.13672| Valid loss = -256.73612
+[ 15/20 ] <[0 0 0 0 1 0 1]> Train loss = 0.35003| Valid loss = -297.52483
+[ 16/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 17/20 ] <[1 0 1 1 0 1 1]> Train loss = 0.24588| Valid loss = -454.33760
+[ 18/20 ] <[1 1 0 1 0 1 1]> Train loss = 0.06600| Valid loss = -427.26154
+[ 19/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 20/20 ] <[0 1 0 1 0 1 0]> Train loss = 0.11876| Valid loss = -177.12577
+
+====[ GA iter 17/50 ]====
+[ 01/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 02/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 03/20 ] <[1 0 1 0 0 0 0]> Train loss = -2.12764| Valid loss = -6714.21785
+[ 04/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 05/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 06/20 ] <[0 0 1 0 1 1 0]> Train loss = 0.10283| Valid loss = -162.80230
+[ 07/20 ] <[0 0 0 1 0 0 0]> Train loss = 0.10724| Valid loss = -263.88679
+[ 08/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 09/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 10/20 ] <[0 0 1 0 1 0 0]> Train loss = -3.73820| Valid loss = -2609.37066
+[ 11/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 12/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 13/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 14/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 15/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 16/20 ] <[1 0 1 0 0 0 0]> Train loss = -2.12764| Valid loss = -6714.21785
+[ 17/20 ] <[0 1 0 0 0 0 0]> Train loss = -46.31675| Valid loss = -11065.75406
+[ 18/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 19/20 ] <[0 1 1 0 0 0 0]> Train loss = -1.65512| Valid loss = -5026.26438
+[ 20/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+
+====[ GA iter 18/50 ]====
+[ 01/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 02/20 ] <[1 0 0 0 1 1 0]> Train loss = 0.08357| Valid loss = -178.86015
+[ 03/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 04/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 05/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 06/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 09/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 10/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 11/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 12/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 13/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 14/20 ] <[0 1 1 0 1 0 0]> Train loss = 0.12314| Valid loss = -148.85681
+[ 15/20 ] <[0 0 0 0 0 0 0]> Train loss = 0.04634| Valid loss = -117.97639
+[ 16/20 ] <[1 0 1 0 0 0 0]> Train loss = -2.12764| Valid loss = -6714.21785
+[ 17/20 ] <[1 0 0 0 0 0 0]> Train loss = -25.47096| Valid loss = -8633.60820
+[ 18/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 19/20 ] <[0 0 0 1 0 0 0]> Train loss = 0.10724| Valid loss = -263.88679
+[ 20/20 ] <[0 0 1 0 1 1 0]> Train loss = 0.10283| Valid loss = -162.80230
+
+====[ GA iter 19/50 ]====
+[ 01/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 02/20 ] <[1 0 0 1 0 0 0]> Train loss = -3.92670| Valid loss = -6104.67145
+[ 03/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 04/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 05/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 06/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 07/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 08/20 ] <[0 0 0 0 0 0 1]> Train loss = 0.31843| Valid loss = -320.29313
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 11/20 ] <[0 1 1 0 1 1 0]> Train loss = 0.12804| Valid loss = -155.20089
+[ 12/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 13/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 14/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 15/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 16/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 17/20 ] <[0 1 1 0 0 1 1]> Train loss = -1.03976| Valid loss = -296.41408
+[ 18/20 ] <[0 0 0 0 1 0 0]> Train loss = 0.09597| Valid loss = -226.59617
+[ 19/20 ] <[1 1 0 1 0 0 0]> Train loss = 0.08835| Valid loss = -191.22641
+[ 20/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+
+====[ GA iter 20/50 ]====
+[ 01/20 ] <[0 1 0 0 1 1 0]> Train loss = 0.08356| Valid loss = -144.66231
+[ 02/20 ] <[0 0 1 1 0 1 0]> Train loss = 0.11424| Valid loss = -190.12576
+[ 03/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 04/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 05/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 06/20 ] <[1 1 0 1 0 0 0]> Train loss = 0.08835| Valid loss = -191.22641
+[ 07/20 ] <[1 0 0 0 1 1 0]> Train loss = 0.08357| Valid loss = -178.86015
+[ 08/20 ] <[1 1 0 1 0 0 0]> Train loss = 0.08835| Valid loss = -191.22641
+[ 09/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 10/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 11/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 12/20 ] <[1 0 0 0 1 1 0]> Train loss = 0.08357| Valid loss = -178.86015
+[ 13/20 ] <[1 1 0 1 0 0 0]> Train loss = 0.08835| Valid loss = -191.22641
+[ 14/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 15/20 ] <[0 1 1 0 1 1 0]> Train loss = 0.12804| Valid loss = -155.20089
+[ 16/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 17/20 ] <[0 0 0 0 1 0 0]> Train loss = 0.09597| Valid loss = -226.59617
+[ 18/20 ] <[0 1 1 0 1 1 0]> Train loss = 0.12804| Valid loss = -155.20089
+[ 19/20 ] <[0 1 1 0 0 0 1]> Train loss = 0.32430| Valid loss = -332.87010
+[ 20/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+
+====[ GA iter 21/50 ]====
+[ 01/20 ] <[1 0 1 0 0 0 1]> Train loss = 0.26540| Valid loss = -402.20684
+[ 02/20 ] <[0 1 1 0 1 1 0]> Train loss = 0.12804| Valid loss = -155.20089
+[ 03/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 04/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 05/20 ] <[0 1 0 0 0 0 0]> Train loss = -46.31675| Valid loss = -11065.75406
+[ 06/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 07/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 08/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 09/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 10/20 ] <[0 0 0 0 1 0 0]> Train loss = 0.09597| Valid loss = -226.59617
+[ 11/20 ] <[1 0 0 0 1 0 0]> Train loss = -4.12673| Valid loss = -7170.18708
+[ 12/20 ] <[1 0 0 0 0 0 0]> Train loss = -25.47096| Valid loss = -8633.60820
+[ 13/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 14/20 ] <[0 1 1 0 0 1 1]> Train loss = -1.03976| Valid loss = -296.41408
+[ 15/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 16/20 ] <[1 0 0 0 1 1 0]> Train loss = 0.08357| Valid loss = -178.86015
+[ 17/20 ] <[1 0 0 0 0 0 0]> Train loss = -25.47096| Valid loss = -8633.60820
+[ 18/20 ] <[0 1 1 0 0 1 1]> Train loss = -1.03976| Valid loss = -296.41408
+[ 19/20 ] <[0 0 0 1 1 1 0]> Train loss = 0.13453| Valid loss = -304.63753
+[ 20/20 ] <[0 1 1 0 1 0 0]> Train loss = 0.12314| Valid loss = -148.85681
+
+====[ GA iter 22/50 ]====
+[ 01/20 ] <[1 0 1 0 0 1 1]> Train loss = -0.28452| Valid loss = -486.85258
+[ 02/20 ] <[0 1 0 0 0 0 0]> Train loss = -46.31675| Valid loss = -11065.75406
+[ 03/20 ] <[0 1 1 1 1 1 0]> Train loss = 0.10790| Valid loss = -216.48524
+[ 04/20 ] <[1 1 0 0 1 1 1]> Train loss = 0.35526| Valid loss = -355.92816
+[ 05/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 06/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 07/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 08/20 ] <[1 1 0 1 1 0 0]> Train loss = -0.34478| Valid loss = -267.22847
+[ 09/20 ] <[0 1 0 0 1 0 0]> Train loss = -3.48472| Valid loss = -8828.43800
+[ 10/20 ] <[1 0 0 1 1 0 0]> Train loss = 0.12892| Valid loss = -262.72437
+[ 11/20 ] <[0 0 0 0 1 0 0]> Train loss = 0.09597| Valid loss = -226.59617
+[ 12/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 13/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 14/20 ] <[1 0 0 0 0 0 0]> Train loss = -25.47096| Valid loss = -8633.60820
+[ 15/20 ] <[0 1 0 0 1 0 0]> Train loss = -3.48472| Valid loss = -8828.43800
+[ 16/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 17/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 18/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 19/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 20/20 ] <[0 1 0 0 1 0 0]> Train loss = -3.48472| Valid loss = -8828.43800
+
+====[ GA iter 23/50 ]====
+[ 01/20 ] <[0 1 1 1 1 1 0]> Train loss = 0.10790| Valid loss = -216.48524
+[ 02/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 03/20 ] <[1 1 0 1 0 0 0]> Train loss = 0.08835| Valid loss = -191.22641
+[ 04/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 05/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 06/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 09/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 10/20 ] <[1 1 0 1 0 0 0]> Train loss = 0.08835| Valid loss = -191.22641
+[ 11/20 ] <[0 0 0 1 1 0 0]> Train loss = 0.10977| Valid loss = -306.54388
+[ 12/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 13/20 ] <[0 1 0 0 0 0 0]> Train loss = -46.31675| Valid loss = -11065.75406
+[ 14/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 15/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -539.60519
+[ 16/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 17/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 18/20 ] <[0 1 1 0 1 1 0]> Train loss = 0.12804| Valid loss = -155.20089
+[ 19/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 20/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+
+====[ GA iter 24/50 ]====
+[ 01/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 02/20 ] <[0 1 1 0 1 0 0]> Train loss = 0.12314| Valid loss = -148.85681
+[ 03/20 ] <[0 1 1 1 1 1 0]> Train loss = 0.10790| Valid loss = -216.48524
+[ 04/20 ] <[0 0 0 1 1 1 0]> Train loss = 0.13453| Valid loss = -304.63753
+[ 05/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 06/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 07/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 08/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 09/20 ] <[1 1 0 1 1 0 0]> Train loss = -0.34478| Valid loss = -267.22847
+[ 10/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 11/20 ] <[0 1 0 0 1 1 0]> Train loss = 0.08356| Valid loss = -144.66231
+[ 12/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 13/20 ] <[0 0 0 1 1 0 0]> Train loss = 0.10977| Valid loss = -306.54388
+[ 14/20 ] <[1 1 0 1 1 0 0]> Train loss = -0.34478| Valid loss = -267.22847
+[ 15/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -539.60519
+[ 16/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 17/20 ] <[0 1 0 1 1 1 0]> Train loss = 0.10277| Valid loss = -233.04648
+[ 18/20 ] <[1 1 0 0 1 1 1]> Train loss = 0.35526| Valid loss = -355.92816
+[ 19/20 ] <[0 1 1 1 1 1 0]> Train loss = 0.10790| Valid loss = -216.48524
+[ 20/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+
+====[ GA iter 25/50 ]====
+[ 01/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 02/20 ] <[0 0 0 1 1 1 1]> Train loss = 0.30272| Valid loss = -325.07499
+[ 03/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 04/20 ] <[1 0 0 0 0 0 0]> Train loss = -25.47096| Valid loss = -8633.60820
+[ 05/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 06/20 ] <[1 1 0 1 1 1 1]> Train loss = -0.68226| Valid loss = -333.46704
+[ 07/20 ] <[1 1 0 1 1 1 1]> Train loss = -0.68226| Valid loss = -333.46704
+[ 08/20 ] <[0 1 0 0 1 0 0]> Train loss = -3.48472| Valid loss = -8828.43800
+[ 09/20 ] <[0 1 0 0 1 0 1]> Train loss = 0.37459| Valid loss = -277.05981
+[ 10/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 11/20 ] <[0 1 1 1 0 1 1]> Train loss = -0.16327| Valid loss = -369.66695
+[ 12/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 13/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -539.60519
+[ 14/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 15/20 ] <[0 1 1 0 1 0 0]> Train loss = 0.12314| Valid loss = -148.85681
+[ 16/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 17/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 18/20 ] <[0 0 0 0 1 1 1]> Train loss = 0.37770| Valid loss = -296.43267
+[ 19/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 20/20 ] <[0 1 0 0 1 0 0]> Train loss = -3.48472| Valid loss = -8828.43800
+
+====[ GA iter 26/50 ]====
+[ 01/20 ] <[0 0 0 1 1 1 1]> Train loss = 0.30272| Valid loss = -325.07499
+[ 02/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 03/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 04/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 05/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 06/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 07/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 08/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 11/20 ] <[1 1 0 1 1 1 1]> Train loss = -0.68226| Valid loss = -333.46704
+[ 12/20 ] <[0 0 0 1 1 1 1]> Train loss = 0.30272| Valid loss = -325.07499
+[ 13/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 14/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 15/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 16/20 ] <[0 1 1 0 1 0 0]> Train loss = 0.12314| Valid loss = -148.85681
+[ 17/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 18/20 ] <[0 0 0 0 0 1 1]> Train loss = 0.35520| Valid loss = -308.50319
+[ 19/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 20/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+
+====[ GA iter 27/50 ]====
+[ 01/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 02/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 03/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 04/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 05/20 ] <[1 1 0 0 1 1 1]> Train loss = 0.35526| Valid loss = -355.92816
+[ 06/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 07/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 08/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 09/20 ] <[1 0 0 0 1 1 0]> Train loss = 0.08357| Valid loss = -178.86015
+[ 10/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 11/20 ] <[1 0 0 0 1 1 0]> Train loss = 0.08357| Valid loss = -178.86015
+[ 12/20 ] <[1 1 0 1 1 1 1]> Train loss = -0.68226| Valid loss = -333.46704
+[ 13/20 ] <[0 0 0 0 1 1 1]> Train loss = 0.37770| Valid loss = -296.43267
+[ 14/20 ] <[0 0 0 1 1 1 0]> Train loss = 0.13453| Valid loss = -304.63753
+[ 15/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 16/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 17/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 18/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 19/20 ] <[0 1 0 1 1 1 0]> Train loss = 0.10277| Valid loss = -233.04648
+[ 20/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+
+====[ GA iter 28/50 ]====
+[ 01/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 02/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 03/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 04/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 05/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 06/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 11/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 12/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 13/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 14/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 15/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 16/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 17/20 ] <[1 0 0 1 1 1 0]> Train loss = 0.07888| Valid loss = -264.48663
+[ 18/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 19/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 20/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+
+====[ GA iter 29/50 ]====
+[ 01/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 02/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 03/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 04/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 05/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 06/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 07/20 ] <[1 0 0 1 0 0 0]> Train loss = -3.92670| Valid loss = -6104.67145
+[ 08/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 09/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 10/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 12/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 13/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 14/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 15/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 16/20 ] <[1 0 0 1 1 1 0]> Train loss = 0.07888| Valid loss = -264.48663
+[ 17/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 18/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 19/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 20/20 ] <[1 0 0 0 1 1 0]> Train loss = 0.08357| Valid loss = -178.86015
+
+====[ GA iter 30/50 ]====
+[ 01/20 ] <[1 0 0 1 0 1 1]> Train loss = 0.41094| Valid loss = -317.65190
+[ 02/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 03/20 ] <[1 0 0 1 0 0 0]> Train loss = -3.92670| Valid loss = -6104.67145
+[ 04/20 ] <[1 0 0 1 0 0 0]> Train loss = -3.92670| Valid loss = -6104.67145
+[ 05/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 06/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 07/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 08/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 09/20 ] <[0 0 0 1 0 1 0]> Train loss = 0.13672| Valid loss = -256.73612
+[ 10/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 11/20 ] <[1 0 0 1 0 0 0]> Train loss = -3.92670| Valid loss = -6104.67145
+[ 12/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 13/20 ] <[1 0 0 0 1 1 0]> Train loss = 0.08357| Valid loss = -178.86015
+[ 14/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 15/20 ] <[1 1 1 1 1 1 1]> Train loss = -1.98787| Valid loss = -289.38502
+[ 16/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 17/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 18/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 19/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 20/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+
+====[ GA iter 31/50 ]====
+[ 01/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 02/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 03/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 04/20 ] <[1 0 0 0 1 1 0]> Train loss = 0.08357| Valid loss = -178.86015
+[ 05/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 06/20 ] <[1 0 0 0 1 1 0]> Train loss = 0.08357| Valid loss = -178.86015
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 11/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 12/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 13/20 ] <[1 0 1 1 0 1 1]> Train loss = 0.24588| Valid loss = -454.33760
+[ 14/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 15/20 ] <[1 0 0 1 1 1 0]> Train loss = 0.07888| Valid loss = -264.48663
+[ 16/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 17/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 18/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 19/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 20/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+
+====[ GA iter 32/50 ]====
+[ 01/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 02/20 ] <[0 0 0 0 1 1 0]> Train loss = 0.12783| Valid loss = -227.34968
+[ 03/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 04/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 05/20 ] <[1 0 1 0 1 1 0]> Train loss = 0.12741| Valid loss = -190.53053
+[ 06/20 ] <[1 0 1 1 0 1 1]> Train loss = 0.24588| Valid loss = -454.33760
+[ 07/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 08/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 09/20 ] <[1 0 1 1 0 1 1]> Train loss = 0.24588| Valid loss = -454.33760
+[ 10/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 11/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 12/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 13/20 ] <[1 1 1 0 1 1 1]> Train loss = -4.40549| Valid loss = -290.79041
+[ 14/20 ] <[1 0 1 1 0 1 0]> Train loss = 0.03111| Valid loss = -215.87060
+[ 15/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 16/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 17/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 18/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 19/20 ] <[1 0 0 1 1 1 0]> Train loss = 0.07888| Valid loss = -264.48663
+[ 20/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+
+====[ GA iter 33/50 ]====
+[ 01/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 02/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 03/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 04/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 05/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 06/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 11/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 12/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 13/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 14/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 15/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 16/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 17/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 18/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 19/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 20/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+
+====[ GA iter 34/50 ]====
+[ 01/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 02/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 03/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 04/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 05/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 06/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 07/20 ] <[0 0 0 0 0 1 0]> Train loss = 0.09903| Valid loss = -117.93522
+[ 08/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 09/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 10/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 11/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 12/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 13/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 14/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 15/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 16/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 17/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 18/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 19/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 20/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+
+====[ GA iter 35/50 ]====
+[ 01/20 ] <[1 0 0 0 1 1 0]> Train loss = 0.08357| Valid loss = -178.86015
+[ 02/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 03/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 04/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 05/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 06/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 11/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 12/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 13/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 14/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 15/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 16/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 17/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 18/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 19/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 20/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+
+====[ GA iter 36/50 ]====
+[ 01/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 02/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 03/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 04/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 05/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 06/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 07/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 08/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 09/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 10/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 11/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 12/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 13/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 14/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 15/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 16/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 17/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 18/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 19/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 20/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+
+====[ GA iter 37/50 ]====
+[ 01/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 02/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 03/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -539.60519
+[ 04/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 05/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 06/20 ] <[1 1 1 0 1 1 0]> Train loss = -0.00286| Valid loss = -183.69268
+[ 07/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 08/20 ] <[1 1 1 0 1 1 0]> Train loss = -0.00286| Valid loss = -183.69268
+[ 09/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 10/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 11/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 12/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 13/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 14/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 15/20 ] <[1 0 0 0 0 1 1]> Train loss = 0.33896| Valid loss = -300.07373
+[ 16/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 17/20 ] <[1 1 1 1 1 1 0]> Train loss = -0.84621| Valid loss = -256.52716
+[ 18/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 19/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 20/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+
+====[ GA iter 38/50 ]====
+[ 01/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 02/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 03/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 04/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 05/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 06/20 ] <[1 1 0 1 0 1 1]> Train loss = 0.06600| Valid loss = -427.26154
+[ 07/20 ] <[1 1 1 0 1 1 0]> Train loss = -0.00286| Valid loss = -183.69268
+[ 08/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 09/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 10/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 12/20 ] <[0 1 0 1 0 1 0]> Train loss = 0.11876| Valid loss = -177.12577
+[ 13/20 ] <[0 1 1 0 0 1 1]> Train loss = -1.03976| Valid loss = -296.41408
+[ 14/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 15/20 ] <[0 1 0 0 0 1 1]> Train loss = 0.21744| Valid loss = -539.60519
+[ 16/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 17/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 18/20 ] <[0 1 1 0 0 0 0]> Train loss = -1.65512| Valid loss = -5026.26438
+[ 19/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 20/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+
+====[ GA iter 39/50 ]====
+[ 01/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 02/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 03/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 04/20 ] <[1 1 1 0 1 1 0]> Train loss = -0.00286| Valid loss = -183.69268
+[ 05/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 06/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 07/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 08/20 ] <[1 1 0 1 0 0 0]> Train loss = 0.08835| Valid loss = -191.22641
+[ 09/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 10/20 ] <[1 1 1 0 1 1 0]> Train loss = -0.00286| Valid loss = -183.69268
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 12/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 13/20 ] <[0 1 0 1 1 0 0]> Train loss = 0.13048| Valid loss = -225.15608
+[ 14/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 15/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 16/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 17/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 18/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 19/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 20/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+
+====[ GA iter 40/50 ]====
+[ 01/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 02/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 03/20 ] <[1 1 1 0 0 1 1]> Train loss = -3.98563| Valid loss = -426.68648
+[ 04/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 05/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 06/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 07/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 08/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 09/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 10/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 11/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 12/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 13/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 14/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 15/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 16/20 ] <[1 1 1 0 0 0 0]> Train loss = 0.05752| Valid loss = -179.21564
+[ 17/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 18/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 19/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 20/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+
+====[ GA iter 41/50 ]====
+[ 01/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 02/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 03/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 04/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 05/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 06/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 11/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 12/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 13/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 14/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 15/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 16/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 17/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 18/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 19/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 20/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+
+====[ GA iter 42/50 ]====
+[ 01/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 02/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 03/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 04/20 ] <[1 1 0 0 1 1 1]> Train loss = 0.35526| Valid loss = -355.92816
+[ 05/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 06/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[1 0 1 0 0 1 0]> Train loss = 0.06229| Valid loss = -87.27839
+[ 11/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 12/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 13/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 14/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 15/20 ] <[1 1 0 0 1 0 0]> Train loss = 0.06075| Valid loss = -154.05553
+[ 16/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 17/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 18/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 19/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 20/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+
+====[ GA iter 43/50 ]====
+[ 01/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 02/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 03/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 04/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 05/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 06/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[1 1 1 1 0 0 0]> Train loss = 0.00071| Valid loss = -258.22260
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 11/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 12/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 13/20 ] <[1 1 1 1 0 0 0]> Train loss = 0.00071| Valid loss = -258.22260
+[ 14/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 15/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 16/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 17/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 18/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 19/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 20/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+
+====[ GA iter 44/50 ]====
+[ 01/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 02/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 03/20 ] <[1 1 1 1 0 1 1]> Train loss = -1.32114| Valid loss = -285.65031
+[ 04/20 ] <[0 1 0 0 1 1 0]> Train loss = 0.08356| Valid loss = -144.66231
+[ 05/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 06/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 07/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 08/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[0 1 0 1 0 1 0]> Train loss = 0.11876| Valid loss = -177.12577
+[ 11/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 12/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 13/20 ] <[0 1 0 0 1 1 0]> Train loss = 0.08356| Valid loss = -144.66231
+[ 14/20 ] <[0 1 0 0 1 1 0]> Train loss = 0.08356| Valid loss = -144.66231
+[ 15/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 16/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 17/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 18/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 19/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 20/20 ] <[0 1 0 0 1 0 0]> Train loss = -3.48472| Valid loss = -8828.43800
+
+====[ GA iter 45/50 ]====
+[ 01/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 02/20 ] <[0 1 1 1 0 1 0]> Train loss = 0.12260| Valid loss = -190.15272
+[ 03/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 04/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 05/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+[ 06/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 07/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 08/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 09/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 10/20 ] <[1 1 0 1 0 0 0]> Train loss = 0.08835| Valid loss = -191.22641
+[ 11/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 12/20 ] <[0 1 0 0 0 1 0]> Train loss = -8.01824| Valid loss = -7189.82365
+[ 13/20 ] <[1 1 0 1 0 1 1]> Train loss = 0.06600| Valid loss = -427.26154
+[ 14/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 15/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 16/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 17/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 18/20 ] <[0 1 0 1 0 0 0]> Train loss = -3.30672| Valid loss = -4921.78121
+[ 19/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 20/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+
+====[ GA iter 46/50 ]====
+[ 01/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 02/20 ] <[1 1 0 1 1 1 0]> Train loss = 0.04082| Valid loss = -245.34419
+[ 03/20 ] <[0 1 0 1 0 1 0]> Train loss = 0.11876| Valid loss = -177.12577
+[ 04/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 05/20 ] <[0 1 1 1 0 0 0]> Train loss = 0.12508| Valid loss = -183.24919
+[ 06/20 ] <[1 0 0 1 0 1 1]> Train loss = 0.41094| Valid loss = -317.65190
+[ 07/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 08/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 09/20 ] <[0 1 0 1 0 1 0]> Train loss = 0.11876| Valid loss = -177.12577
+[ 10/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 11/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 12/20 ] <[1 1 1 1 0 0 0]> Train loss = 0.00071| Valid loss = -258.22260
+[ 13/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 14/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 15/20 ] <[1 0 0 1 0 0 0]> Train loss = -3.92670| Valid loss = -6104.67145
+[ 16/20 ] <[1 1 0 1 0 1 1]> Train loss = 0.06600| Valid loss = -427.26154
+[ 17/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 18/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 19/20 ] <[1 1 1 1 1 1 0]> Train loss = -0.84621| Valid loss = -256.52716
+[ 20/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+
+====[ GA iter 47/50 ]====
+[ 01/20 ] <[1 0 0 1 1 0 0]> Train loss = 0.12892| Valid loss = -262.72437
+[ 02/20 ] <[1 1 0 1 0 1 1]> Train loss = 0.06600| Valid loss = -427.26154
+[ 03/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 04/20 ] <[1 1 0 1 0 0 0]> Train loss = 0.08835| Valid loss = -191.22641
+[ 05/20 ] <[1 1 1 1 0 0 0]> Train loss = 0.00071| Valid loss = -258.22260
+[ 06/20 ] <[0 1 1 1 1 1 0]> Train loss = 0.10790| Valid loss = -216.48524
+[ 07/20 ] <[0 1 1 1 0 1 0]> Train loss = 0.12260| Valid loss = -190.15272
+[ 08/20 ] <[1 1 0 1 1 0 1]> Train loss = 0.26274| Valid loss = -385.57982
+[ 09/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 10/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 11/20 ] <[1 1 0 0 1 1 0]> Train loss = 0.07363| Valid loss = -174.78771
+[ 12/20 ] <[1 0 0 1 0 1 0]> Train loss = 0.14142| Valid loss = -212.56774
+[ 13/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 14/20 ] <[1 1 1 1 1 1 0]> Train loss = -0.84621| Valid loss = -256.52716
+[ 15/20 ] <[0 0 0 1 0 1 0]> Train loss = 0.13672| Valid loss = -256.73612
+[ 16/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 17/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 18/20 ] <[1 0 0 1 1 1 0]> Train loss = 0.07888| Valid loss = -264.48663
+[ 19/20 ] <[1 1 1 1 1 1 0]> Train loss = -0.84621| Valid loss = -256.52716
+[ 20/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+
+====[ GA iter 48/50 ]====
+[ 01/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 02/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 03/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 04/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 05/20 ] <[1 1 0 0 0 0 0]> Train loss = -4.55615| Valid loss = -11309.65314
+[ 06/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 09/20 ] <[1 1 1 0 0 1 0]> Train loss = -0.26602| Valid loss = -154.58677
+[ 10/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 11/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 12/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 13/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 14/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 15/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 16/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 17/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 18/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 19/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 20/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+
+====[ GA iter 49/50 ]====
+[ 01/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 02/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 03/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 04/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 05/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 06/20 ] <[0 1 1 0 0 1 0]> Train loss = 0.10513| Valid loss = -114.87962
+[ 07/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 08/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 09/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 10/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 11/20 ] <[1 0 0 0 0 1 0]> Train loss = -2.39860| Valid loss = -2971.59807
+[ 12/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 13/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 14/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 15/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 16/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 17/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 18/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 19/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 20/20 ] <[1 1 1 1 0 1 0]> Train loss = -0.47056| Valid loss = -215.18372
+
+====[ GA iter 50/50 ]====
+[ 01/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 02/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 03/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 04/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 05/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 06/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 07/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 08/20 ] <[1 1 0 0 1 1 1]> Train loss = 0.35526| Valid loss = -355.92816
+[ 09/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 10/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 11/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 12/20 ] <[1 0 1 1 0 1 1]> Train loss = 0.24588| Valid loss = -454.33760
+[ 13/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 14/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 15/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 16/20 ] <[1 1 0 0 1 1 1]> Train loss = 0.35526| Valid loss = -355.92816
+[ 17/20 ] <[1 1 0 1 0 1 0]> Train loss = 0.11950| Valid loss = -208.21054
+[ 18/20 ] <[1 1 0 0 0 1 1]> Train loss = -2.55064| Valid loss = -533.06065
+[ 19/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+[ 20/20 ] <[1 1 0 0 0 1 0]> Train loss = 0.07617| Valid loss = -66.51636
+=====Test and Plot=====
+BEST [1 1 0 0 0 1 0]

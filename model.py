@@ -6,7 +6,7 @@ import torch.nn as nn
 
     
 class BasicBlock(nn.Module):
-    def __init__(self, input_dim, output_dim, hidden_layers, m_type = 'lstm', dropout = 0.5, bidirectional = False):
+    def __init__(self, input_dim, output_dim, hidden_layers, m_type = 'lstm', dropout = 0.5, bidirectional = False, nhead=16):
         super(BasicBlock, self).__init__()
         self.m_type = m_type
         self.num_layers = hidden_layers
@@ -21,7 +21,7 @@ class BasicBlock(nn.Module):
         elif self.m_type == 'transformer':
             self.block = nn.Sequential(
                 nn.Linear(input_dim, output_dim),
-                *[nn.TransformerEncoderLayer(d_model=output_dim, dim_feedforward=2048, nhead=hidden_layers, dropout = self.dropout, batch_first=True) for i in range(1)]
+                *[nn.TransformerEncoderLayer(d_model=output_dim, dim_feedforward=2048, nhead=nhead, dropout = self.dropout, batch_first=True) for i in range(self.num_layers)]
             )
     def forward(self, x):
         if self.m_type == 'lstm':
@@ -37,10 +37,10 @@ class BasicBlock(nn.Module):
         return out
     
 class Classifier(nn.Module):
-    def __init__(self, input_dim, output_dim=41, hidden_layers=1, hidden_dim=256, dropout=0.5, m_type = 'lstm'):
+    def __init__(self, input_dim, output_dim=41, hidden_layers=1, hidden_dim=256, dropout=0.5, nhead=16, m_type = 'lstm'):
         super(Classifier, self).__init__()
         self.fc = nn.Sequential(
-            BasicBlock(input_dim, hidden_dim, hidden_layers, dropout=dropout, m_type = m_type),
+            BasicBlock(input_dim, hidden_dim, hidden_layers, dropout=dropout, m_type = m_type, nhead=nhead),
             # nn.Linear(hidden_dim, output_dim)
         )
         self.linear = nn.Sequential(

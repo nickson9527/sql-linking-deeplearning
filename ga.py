@@ -30,11 +30,20 @@ class GA():
         self.evaluation()
         progress = trange(self.num_iter,desc = "GA")
         for iter in progress:
+            with open(self.args.exp_name / f"log.txt","a") as f:
+                f.write(f"\n====[ GA iter {iter + 1:02d}/{self.num_iter:02d} ]====\n")
             new_population = []
             weight = np.array([self.population[i].fitness for i in range(self.num_chrom)])
             # weight = np.log(weight)
             weight = weight - np.mean(weight)
-            std_weight = np.exp(weight) / np.sum(np.exp(weight))
+            np.seterr(all='raise')
+            try:
+                std_weight = np.exp(weight) / np.sum(np.exp(weight))
+            except Exception as e:
+                print(e)
+                weight = weight - np.min(weight)
+                std_weight = weight / np.sum(weight)
+                
             for j in range(0,self.num_chrom,2):
                 p1,p2 = np.random.choice(self.population,size=2,p=std_weight, replace=False)
                 if np.random.rand() < self.rate_cross:
@@ -72,16 +81,23 @@ class GA():
                 score = self.fitness_f(chrom,self.raw_x,self.raw_y,self.args)
                 self.lookup[str(chrom)] = score
             if score['v-acc'] > self.best['v-acc']:
-                self.best['code'] = score['code']
+                self.best['code'] = score['code'].copy()
                 self.best['model'] = score['model']
                 self.best['v-acc'] = score['v-acc']
                 self.best['t-acc'] = score['t-acc']
                 self.best['v-loss'] = score['v-loss']
                 self.best['t-loss'] = score['t-loss']
                 self.best['time'] = score['time']
-                self.best['best epoch']:score['best epoch']
+                self.best['best epoch'] = score['best epoch']
+
+                with open(self.args.exp_name / f"log.txt","a") as f:
+                    f.write(f"[ {i + 1:02d}/{self.num_chrom:02d} ] <{self.best['code']}> <{str(chrom)}> Train loss = {score['t-loss']:.5f}| Valid loss = {score['v-loss']:.5f}-> best\n")
+            else:
+                with open(self.args.exp_name / f"log.txt","a") as f:
+                    f.write(f"[ {i + 1:02d}/{self.num_chrom:02d} ] <{str(chrom)}> Train loss = {score['t-loss']:.5f}| Valid loss = {score['v-loss']:.5f}\n")
 
             self.population[i].fitness = score['v-acc']
+                
 
 class Chromosome():
     def __init__(self,chrom=np.zeros(2000)):

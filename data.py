@@ -50,30 +50,21 @@ class TyphoonDataset(Dataset):
 
         self.mydb = mysql.connector.connect(host=host, user=user, passwd=passwd)
         self.mycursor = self.mydb.cursor()
-        self.mycursor.execute(f"DROP DATABASE IF EXISTS DB_{split}")
-        self.mycursor.execute(f"CREATE DATABASE IF NOT EXISTS DB_{split}")
-        self.mycursor.execute(f"USE DB_{split}")
-        if self.data_path and self.typhoon_path:
-            self.load_db(self.data_path,self.typhoon_path)
+        self.mycursor.execute(f"USE DB_sql")
+        
+        # if self.data_path and self.typhoon_path:
+        #     self.load_db(self.data_path,self.typhoon_path)
     
     def load_db(self,data_path = './較少的數據集(測試用).csv',typhoon_path='./颱風場次.csv'):
-        # self.mycursor.execute("CREATE TABLE IF NOT EXISTS training_data (id INT AUTO_INCREMENT PRIMARY KEY, time VARCHAR(50), Shihimen INT, Feitsui INT, TPB INT, inflow INT, outflow INT, Feitsui_outflow INT, Tide INT, TPB_level INT)")
+        self.mycursor.execute(f"DROP DATABASE IF EXISTS DB_sql")
+        self.mycursor.execute(f"CREATE DATABASE IF NOT EXISTS DB_sql")
+        self.mycursor.execute(f"USE DB_sql")
         self.mycursor.execute("CREATE TABLE IF NOT EXISTS training_data (id INT AUTO_INCREMENT PRIMARY KEY, time TIMESTAMP, Shihimen FLOAT, Feitsui FLOAT, TPB FLOAT, inflow FLOAT, outflow FLOAT, Feitsui_outflow FLOAT, Tide FLOAT, TPB_level FLOAT)")
 
         with open(data_path, newline='', encoding="utf-8") as csvfile:
             reader = csv.reader(csvfile)
             next(reader) # 跳過標題行
             for row in reader:
-                # print(row)
-                # time = row[0] if row[0] else None
-                # Shihimen = round(float(row[1]), 2) if row[1] else None
-                # Feitsui = round(float(row[2]), 2) if row[2] else None
-                # TPB = round(float(row[3]), 2) if row[3] else None
-                # inflow = round(float(row[4]), 2) if row[4] else None
-                # outflow = round(float(row[5]), 2) if row[5] else None
-                # Feitsui_outflow = round(float(row[6]), 2) if row[6] else None
-                # Tide = round(float(row[7]), 2) if row[7] else None
-                # TPB_level = round(float(row[8]), 2) if row[8] else None
                 time =              row[0] if row[0] else None
                 Shihimen =          float(row[1])if row[1] else None
                 Feitsui =           float(row[2])if row[2] else None
@@ -106,12 +97,12 @@ class TyphoonDataset(Dataset):
                 self.mycursor.execute(sql, val)
 
         self.mydb.commit()
-        if self.typhoon_ids and self.selected_columns and self.label:
-            self.fetch_data(self.typhoon_ids, self.selected_columns, self.label)
+        # if self.typhoon_ids and self.selected_columns and self.label:
+        #     self.fetch_data(self.typhoon_ids, self.selected_columns, self.label)
 
-    def fetch_data(self,typhoon_ids,selected_columns = ['Shihimen', 'Feitsui', 'TPB', 'inflow', 'outflow', 'Feitsui_outflow', 'Tide'],label='TPB_level'):
+    def fetch_data(self,typhoon_ids,selected_columns = ['Shihimen', 'Feitsui', 'TPB', 'inflow', 'outflow', 'Feitsui_outflow', 'Tide'],label='TPB_level',table="training_data"):
         typhoon_data = []
-        
+        # print('fetch',typhoon_ids,selected_columns)
         for typhoon_id in typhoon_ids:
             self.mycursor.execute("SELECT startTime, endTime FROM typhoon_list WHERE id = %s", (typhoon_id,))
             result = self.mycursor.fetchone()
@@ -126,23 +117,26 @@ class TyphoonDataset(Dataset):
             ])
     
             # 建立 SQL 查詢語句，從 training_data 資料表中選擇指定時間範圍內的資料並進行正規化
-            query = f"""
-                SELECT time, YEAR(time), MONTH(time), DAY(time), HOUR(time), {columns},{label}
-                FROM training_data AS t
-                CROSS JOIN (
-                    SELECT
-                        {', '.join([f"MIN({col}) AS min_{col}, MAX({col}) AS max_{col}" for col in selected_columns])}
-                    FROM training_data
-                ) AS minmax
-                WHERE time >= %s AND time <= %s
-            """
-    
+            if len(selected_columns) == 0:
+                query = f"""
+                    SELECT time, YEAR(time), MONTH(time), DAY(time), HOUR(time), {label}
+                    FROM {table} AS t
+                    WHERE time >= %s AND time <= %s
+                """
+            else:
+                query = f"""
+                    SELECT time, YEAR(time), MONTH(time), DAY(time), HOUR(time), {columns}, {label}
+                    FROM {table} AS t
+                    WHERE time >= %s AND time <= %s
+                """
             params = (start_time, end_time)
             self.mycursor.execute(query, params)
             result = self.mycursor.fetchall()
             if len(result)==0:
-                print(typhoon_id,'EMPTY')
+                # print('empty')
                 continue
+            print(result)
+            exit()
             sequences = []
             labels = []
             for entry in result:
@@ -164,10 +158,136 @@ class TyphoonDataset(Dataset):
                 continue
             typhoon_data.append([sequences,labels])
         self.raw_data = typhoon_data
+        # print(len(typhoon_data[0]))
         # return typhoon_data
         if self.concat_n:
             self.concat_data(self.concat_n)
-    
+    def min_max_data(self,typhoon_ids,selected_columns = ['Shihimen', 'Feitsui', 'TPB', 'inflow', 'outflow', 'Feitsui_outflow', 'Tide'],label='TPB_level',split=None):
+        if split == None:
+            split = self.split
+        # print(split)
+        # print('min_max',typhoon_ids)
+        columns = ', '.join([
+                f"{col}"
+                for col in selected_columns
+            ])
+        params = []
+        condition = ""
+        
+        for typhoon_id in typhoon_ids:
+            self.mycursor.execute("SELECT startTime, endTime FROM typhoon_list WHERE id = %s", (typhoon_id,))
+            result = self.mycursor.fetchone()
+            if result:
+                start_time = result[0]
+                end_time = result[1]
+                cond = " (time >= %s AND time <= %s)"
+                params.append(start_time)
+                params.append(end_time)
+                if condition == "":
+                    condition += cond
+                else:
+                    condition += " OR"
+                    condition += cond
+
+        # 建立 SQL 查詢語句，從 training_data 資料表中選擇指定時間範圍內的資料並進行規範化  
+        if len(selected_columns) != 0:
+            self.mycursor.execute(f'DROP VIEW IF EXISTS specified_typhoon_{split}')
+            query = f"""
+                CREATE VIEW specified_typhoon_{split} AS (
+                SELECT time, {columns}, {label}
+                FROM training_data
+                WHERE {condition} )
+            """
+        else:
+            return
+        self.mycursor.execute(query, params)
+        self.mydb.commit()
+        columns = ', '.join([
+                f"({col} - minmax.min_{col}) / (minmax.max_{col} - minmax.min_{col}) AS {f'{col}'}"
+                # f"{col}"
+                for col in selected_columns
+            ])
+        self.mycursor.execute(f'DROP VIEW IF EXISTS normalized_specified_typhoon_{split}')
+        query = f"""
+            CREATE VIEW normalized_specified_typhoon_{split} AS (
+            SELECT time, {columns}, {label}
+            FROM specified_typhoon_{split} as t
+            CROSS JOIN (
+                SELECT
+                    {', '.join([f"MIN({col}) AS min_{col}, MAX({col}) AS max_{col}" for col in selected_columns])}
+                FROM specified_typhoon_{split}
+            ) AS minmax )
+        """
+
+
+        self.mycursor.execute(query)
+        self.mydb.commit()
+
+    def normalize_data(self,typhoon_ids,selected_columns = ['Shihimen', 'Feitsui', 'TPB', 'inflow', 'outflow', 'Feitsui_outflow', 'Tide'],label='TPB_level'):
+        columns = ', '.join([
+                # f"(t.{col} - MIN(t.{col})) / (MAX(t.{col}) - MIN(t.{col}))"
+                f"{col}"
+                # f"(t.{col} - minmax.min_{col}) / (minmax.max_{col} - minmax.min_{col}) AS {f'normalized_{col}'}"
+                for col in selected_columns
+            ])
+        params = []
+        condition = ""
+        
+        for typhoon_id in typhoon_ids:
+            self.mycursor.execute("SELECT startTime, endTime FROM typhoon_list WHERE id = %s", (typhoon_id,))
+            result = self.mycursor.fetchone()
+            if result:
+                start_time = result[0]
+                end_time = result[1]
+                cond = " (time >= %s AND time <= %s)"
+                params.append(start_time)
+                params.append(end_time)
+                if condition == "":
+                    condition += cond
+                else:
+                    condition += " OR"
+                    condition += cond
+
+        # 建立 SQL 查詢語句，從 training_data 資料表中選擇指定時間範圍內的資料並進行規範化  
+        # query = f"""
+        #     CREATE VIEW specified_typhoon_data AS (
+        #     SELECT {columns}
+        #     FROM training_data
+        #     WHERE {condition} )
+        # """
+        if len(selected_columns) != 0:
+            query = f"""
+                CREATE VIEW specified_typhoon_data AS (
+                SELECT time, {columns}, {label}
+                FROM training_data
+                WHERE {condition} )
+            """
+        else:
+            return
+        self.mycursor.execute(query, params)
+        self.mydb.commit()
+        columns = ', '.join([
+                # f"({col} - minmax.min_{col}) / (minmax.max_{col} - minmax.min_{col}) AS {f'{col}'}"
+                # f"{col}"
+                # f"(COUNT({col})*SUM({col}*{label}) - SUM({col})*SUM({label})) / SQRT((COUNT({col})*SUM(POWER({col}, 2))-POWER(SUM({col}),2))*(COUNT({label})*SUM(POWER({label}, 2))-POWER(SUM({label}),2)))"
+                f"SQRT(SUM(POWER(({col}-mean_{col}),2)) / COUNT({col}) )"
+                for col in selected_columns
+            ])
+        query = f"""
+            CREATE VIEW normalized_specified_typhoon_data AS (
+            SELECT time, {columns}, {label}
+            FROM specified_typhoon_data as t
+            CROSS JOIN (
+                SELECT
+                    {', '.join([f"SUM({col}) / COUNT({col}) AS mean_{col}" for col in selected_columns])}
+                FROM specified_typhoon_data
+            ) AS minmax )
+        """
+
+        # params = (start_time, end_time)
+        self.mycursor.execute(query)
+        self.mydb.commit()
+
     def concat_data(self,concat_n,):
         combined_data = []
         combined_label = []
@@ -186,7 +306,7 @@ class TyphoonDataset(Dataset):
                 # label = y
                 combined_data.append(data_)
                 combined_label.append(torch.tensor(y))
-        print(len(combined_data),len(combined_label))
+        # print(len(combined_data),len(combined_label))
         self.x = torch.stack(combined_data)
         # self.y = torch.cat(combined_label)
         self.y = torch.stack(combined_label)
@@ -194,33 +314,86 @@ class TyphoonDataset(Dataset):
     def get_all_data(self,):
         return self.x,self.y
     
-    # def correlation_coefficient(self,typhoon_ids,selected_columns = ['Shihimen', 'Feitsui', 'TPB', 'inflow', 'outflow', 'Feitsui_outflow', 'Tide'],label='TPB_level'):
-    #     columns = ', '.join([
-    #         f"({col} - minmax.min_{col}) / (minmax.max_{col} - minmax.min_{col}) AS {column_mapping[col]}"
-    #         for col in selected_columns
-    #     ])
+    def correlation_coefficient(self,typhoon_ids,selected_columns = ['Shihimen', 'Feitsui', 'TPB', 'inflow', 'outflow', 'Feitsui_outflow', 'Tide'],label='TPB_level'):
+        columns = ', '.join([
+            f"(COUNT({col})*SUM({col}*{label}) - SUM({col})*SUM({label})) / SQRT((COUNT({col})*SUM(POWER({col}, 2))-POWER(SUM({col}),2))*(COUNT({label})*SUM(POWER({label}, 2))-POWER(SUM({label}),2)))"
+            for col in selected_columns
+        ])
+        params = []
+        condition = ""
+        
+        for typhoon_id in typhoon_ids:
+            self.mycursor.execute("SELECT startTime, endTime FROM typhoon_list WHERE id = %s", (typhoon_id,))
+            result = self.mycursor.fetchone()
+            if result:
+                start_time = result[0]
+                end_time = result[1]
+                features = ', '.join([f"{col}" for col in [*selected_columns,label]])
+                cond = f"""
+                    SELECT time, {features}
+                    FROM training_data
+                    WHERE (time >= %s AND time <= %s)
+                """
+                params.append(start_time)
+                params.append(end_time)
+                if condition == "":
+                    condition += cond
+                else:
+                    condition += f"UNION ALL\n"
+                    condition += cond
 
-    #     # 建立 SQL 查詢語句，從 training_data 資料表中選擇指定時間範圍內的資料並進行規範化
-    #     query = f"""
-    #         SELECT time, {columns}
-    #         FROM training_data AS t
-    #         CROSS JOIN (
-    #             SELECT
-    #                 {', '.join([f"MIN({col}) AS min_{col}, MAX({col}) AS max_{col}" for col in selected_columns])}
-    #             FROM training_data
-    #         ) AS minmax
-    #         WHERE time >= %s AND time <= %s
-    #     """
+        # 建立 SQL 查詢語句，從 training_data 資料表中選擇指定時間範圍內的資料並進行規範化
+        query = f"""
+            SELECT {columns}
+            FROM ({condition}) as t
+        """
 
-    #     params = (start_time, end_time)
-    #     mycursor.execute(query, params)
-    #     result = mycursor.fetchall()
+        # params = (start_time, end_time)
+        self.mycursor.execute(query, params)
+        result = self.mycursor.fetchall()
 
+        for row in result:
+            print(row)
+            # print(type(row))
+        return result[-1]
+    
+    def _correlation_coefficient(self,typhoon_ids,selected_columns = ['Shihimen', 'Feitsui', 'TPB', 'inflow', 'outflow', 'Feitsui_outflow', 'Tide'],label='TPB_level'):
+        columns = ', '.join([
+            f"(COUNT({col})*SUM({col}*{label}) - SUM({col})*SUM({label})) / SQRT((COUNT({col})*SUM(POWER({col}, 2))-POWER(SUM({col}),2))*(COUNT({label})*SUM(POWER({label}, 2))-POWER(SUM({label}),2)))"
+            for col in selected_columns
+        ])
+        params = []
+        condition = ""
+        for typhoon_id in typhoon_ids:
+            self.mycursor.execute("SELECT startTime, endTime FROM typhoon_list WHERE id = %s", (typhoon_id,))
+            result = self.mycursor.fetchone()
+            if result:
+                start_time = result[0]
+                end_time = result[1]
+                cond = " (time >= %s AND time <= %s)"
+                params.append(start_time)
+                params.append(end_time)
+                if condition == "":
+                    condition += cond
+                else:
+                    condition += " OR"
+                    condition += cond
 
-    #     for row in result:
-    #         time = row[0]
-    #         normalized_row = [time] + [float(val) if val is not None else None for val in row[1:]]
-    #         print([f"{val:.4f}" if isinstance(val, float) else val for val in normalized_row])
+        # 建立 SQL 查詢語句，從 training_data 資料表中選擇指定時間範圍內的資料並進行規範化  
+        query = f"""
+            SELECT {columns}
+            FROM training_data
+            WHERE {condition}
+        """
+
+        # params = (start_time, end_time)
+        self.mycursor.execute(query, params)
+        result = self.mycursor.fetchall()
+
+        for row in result:
+            print(row)
+            # print(type(row))
+        return result[-1]
 
 
 if __name__ == '__main__':
