@@ -135,8 +135,8 @@ class TyphoonDataset(Dataset):
             if len(result)==0:
                 # print('empty')
                 continue
-            print(result)
-            exit()
+            # print(result)
+            # exit()
             sequences = []
             labels = []
             for entry in result:
